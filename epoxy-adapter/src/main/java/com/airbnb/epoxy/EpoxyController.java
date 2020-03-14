@@ -162,6 +162,10 @@ public abstract class EpoxyController {
     }
   }
 
+  public synchronized void forceBuild() {
+    buildModelsRunnable.run();
+  }
+
   /**
    * Whether an update to models is currently pending. This can either be because
    * {@link #requestModelBuild()} was called, or because models are currently being built or diff
